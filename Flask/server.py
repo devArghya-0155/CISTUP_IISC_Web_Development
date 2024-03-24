@@ -1,7 +1,5 @@
 import cv2
 import os
-import yaml
-import numpy as np
 from ultralytics import YOLO
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
@@ -21,8 +19,6 @@ def processImg(img):
 
     imgPath = f"{temp}/{result.path}"
     return imgPath
-    # cv2.imshow("image", newImg[0].orig_img)
-    # cv2.waitKey(0)
 
 
 
@@ -38,11 +34,6 @@ app = Flask(__name__)
 app.config['uploadFolder'] = Upload
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
-
-@app.route("/")
-@cross_origin()
-def home():
-    return "Hello World! Cross-origin should be installed!"
 
 @app.route("/results", methods=["POST", "GET"])
 @cross_origin()
