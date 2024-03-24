@@ -1,0 +1,43 @@
+.mainBlock {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  gap: 3rem;
+  color: #f2f2f2;
+  padding: 2rem;
+  background-color: lighten(#222222, 10%);
+  font-size: 2rem;
+  text-align: center;
+
+  & .original {
+    flex: 1;
+    object-fit: contain;
+    overflow: hidden;
+    & img {
+      border-radius: 12px;
+      height: 80%;
+      width: 100%;
+    }
+  }
+  & .new {
+    flex: 1;
+    object-fit: contain;
+    overflow: hidden;
+    & img {
+      border-radius: 12px;
+      height: 80%;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    font-size: 2rem;
+    flex-direction: column;
+  }
+  @media screen and (max-width: 560px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 360px) {
+    font-size: 1.2rem;
+  }
+}
